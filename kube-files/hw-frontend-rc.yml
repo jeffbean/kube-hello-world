@@ -1,0 +1,14 @@
+apiVersion: v1beta3
+kind: ReplicationController
+metadata:
+  name: kube-hello-world-v1
+  namespace: default
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: hw-frontend
+        image: jeffbean/hello-kube
+        ports:
+        - containerPort: 80
