@@ -9,5 +9,5 @@ ADD www /www
 ADD nginx.conf /etc/nginx/
 RUN unset http_proxy
 RUN unset https_proxy
-EXPOSE 80
+EXPOSE 8080
 CMD php-fpm -d variables_order="EGPCS" && exec nginx -g "daemon off;"
