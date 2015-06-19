@@ -1,0 +1,29 @@
+apiVersion: v1beta3
+kind: ReplicationController
+metadata:
+  labels:
+    name: postgres
+  name: postgres-controller
+spec:
+  replicas: 1
+  selector:
+    component: postgres
+  template:
+    metadata:
+      labels:
+        app: podman
+        component: postgres
+    spec:
+      containers:
+      - image: postgres:9.4
+        name: db
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/postgresql
+      volumes:
+      - name: data
+        hostPath:
+          path: "/tmp/data01"

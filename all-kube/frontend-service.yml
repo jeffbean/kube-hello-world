@@ -1,0 +1,24 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"frontend",
+      "labels":{
+         "name":"frontend"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":80,
+          "targetPort":80,
+          "protocol":"TCP"
+        }
+      ],
+      "publicIPs":["10.21.70.10", "10.21.70.11", "10.21.70.12"],
+      "selector":{
+         "name":"frontend"
+      }
+   }
+}
+

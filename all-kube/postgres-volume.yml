@@ -1,0 +1,16 @@
+apiVersion: v1beta3
+kind: Pod
+metadata:
+  name: storage
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      volumeMounts:
+          # name must match the volume name below
+        - name: postgres-persistent-storage
+          # mount path within the container
+          mountPath: /data/postgres
+  volumes:
+    - name: postgres-persistent-storage
+      emptyDir: {}

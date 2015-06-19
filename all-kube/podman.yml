@@ -1,0 +1,26 @@
+apiVersion: v1beta3
+kind: ReplicationController
+metadata:
+  name: podman-v1
+  namespace: default
+  labels:
+    app: podman
+    version: v3
+spec:
+  replicas: 1
+  selector:
+    app: podman
+    version: v3
+  template:
+    metadata:
+      labels:
+        app: podman
+        version: v3
+    spec:
+      containers:
+      - image: rdocker.mcp.com:5000/podman:kube
+        name: web
+        ports:
+        - containerPort: 8001
+      - image: postgres:9.4
+        name: db
