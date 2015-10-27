@@ -15,7 +15,7 @@
           "protocol":"TCP"
         }
       ],
-      "publicIPs":["10.21.70.10", "10.21.70.11", "10.21.70.12"],
+      "type": "NodePort",
       "selector":{
          "name":"kube-hello-world-v1"
       }
