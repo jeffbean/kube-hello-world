@@ -42,6 +42,11 @@
 		?>
 	<?php
 	}
+	foreach($_ENV as $key => $value) {
+	?>
+		<b><?php echo $key; ?></b> : <?php echo $value; ?><br />
+	<?php
+	}
 	?>
 </body>
 </html>
