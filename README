@@ -1,0 +1,4 @@
+# what
+
+This is a simple continer that serves up a web page showing the container environment. It is useful for testing deployments, configurations, as well as load-balancing.
+
